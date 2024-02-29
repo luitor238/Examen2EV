@@ -58,6 +58,11 @@ class ThirdActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-
+        binding.volver.setOnClickListener {
+            val intent = Intent(this, SecondActivity::class.java)
+            intent.putExtra("videojuego", videojuego)
+            intent.putExtra("lista",lista)
+            startActivity(intent)
+        }
     }
 }

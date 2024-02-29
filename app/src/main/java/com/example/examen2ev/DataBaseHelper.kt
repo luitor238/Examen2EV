@@ -10,7 +10,7 @@ import android.provider.MediaStore.Video
 
 class JuegosComprados(context: Context) : SQLiteOpenHelper(context, DATABASE, null, DATABASE_VERSION) {
     companion object {
-        private const val DATABASE_VERSION = 1
+        private const val DATABASE_VERSION = 2
         private const val DATABASE = "basedatos.db"
         private const val TABLA_VIDEOJUEGOS = "videojuegos"
         private const val KEY_ID = "id"
