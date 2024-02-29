@@ -71,12 +71,4 @@ class JuegosComprados(context: Context) : SQLiteOpenHelper(context, DATABASE, nu
         return lista
     }
 
-
-    fun eliminarVideojuego(nombre: String): Int {
-        val db = this.writableDatabase
-        val resultado = db.delete(TABLA_VIDEOJUEGOS, "$COLUMN_NOMBRE=?", arrayOf(nombre))
-        db.close()
-        return resultado
-    }
-
 }
