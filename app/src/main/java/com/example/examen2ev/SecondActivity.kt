@@ -29,7 +29,6 @@ class SecondActivity : AppCompatActivity() {
                         if(binding.anio.text.toString().toInt() in 0..2024){
                             videojuego.setEmpresa(binding.empresa.text.toString())
                             videojuego.setAnio(binding.anio.text.toString().toInt())
-                            lista.add(videojuego)
                             val intent = Intent(this, ThirdActivity::class.java)
                             intent.putExtra("videojuego",videojuego)
                             intent.putExtra("lista",lista)

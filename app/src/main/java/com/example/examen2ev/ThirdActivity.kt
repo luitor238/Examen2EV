@@ -22,10 +22,11 @@ class ThirdActivity : AppCompatActivity() {
         val db = JuegosComprados(this)
 
         val videojuego = intent.getSerializableExtra("videojuego") as Videojuego
-        val lista = intent.getSerializableExtra("lista") as ArrayList<Videojuego>
+        var lista = intent.getSerializableExtra("lista") as ArrayList<Videojuego>
 
         if(videojuego.getNombre()!=""){
             binding.videojuego.text = videojuego.toString()
+            binding.videojuego2.text = videojuego.toString()
         }else{
             binding.titulo.visibility = View.GONE
             binding.guardar.visibility = View.GONE
@@ -40,7 +41,18 @@ class ThirdActivity : AppCompatActivity() {
 
         binding.listaVideojuegos.text = lista.joinToString ("\n")
 
+        binding.guardar2.setOnClickListener {
+            lista.add(videojuego)
+            for (v in lista){
+                db.insertarVideojuego(v)
+            }
+            lista = ArrayList<Videojuego>()
+            val intent = Intent(this, SaveActivity::class.java)
+            intent.putExtra("lista",lista)
+            startActivity(intent)
+        }
         binding.otro.setOnClickListener {
+            lista.add(videojuego)
             val intent = Intent(this, MainActivity::class.java)
             intent.putExtra("lista",lista)
             startActivity(intent)

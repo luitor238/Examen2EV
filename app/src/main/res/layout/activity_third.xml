@@ -64,6 +64,23 @@
             android:layout_marginStart="40dp"
             android:layout_marginEnd="40dp"/>
 
+        <TextView
+            android:id="@+id/videojuego2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="40dp"/>
+
+        <Button
+            android:id="@+id/guardar2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Guardar lista"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="40dp"/>
+
         <Button
             android:id="@+id/otro"
             android:layout_width="match_parent"
